@@ -30,8 +30,8 @@ class App extends Component {
                         return animal.keyword === animalKeyword;
                     });
                 }
-                const updateProps = { images: filteredAnimals };
-                animalList.update(updateProps);
+                const updateProps = { animal: filteredAnimals };
+                animalList.update(updateProps); 
             }
         };
 

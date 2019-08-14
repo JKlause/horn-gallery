@@ -5,7 +5,6 @@ class AnimalList extends Component {
 
     onRender(dom) {
         const animals = this.props.animal;
-
         animals.forEach(animal => {
             const props = { animal: animal };
             const animalCard = new AnimalCard(props);

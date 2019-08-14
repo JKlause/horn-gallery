@@ -7,6 +7,7 @@ class FilterAnimals extends Component {
 
         select.addEventListener('input', () => {
             onFilter(select.value);
+            
         });
     }
 
