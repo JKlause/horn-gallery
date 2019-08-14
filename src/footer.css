@@ -1,0 +1,11 @@
+footer {
+    width: 100vw;
+    height: 120px;
+    background-color: rgba(253, 251, 124, 0.705);   
+    display: flex; 
+    justify-content: center;
+    align-items: flex-end;
+}
+footer>h3{
+    margin-bottom: 15px;
+}

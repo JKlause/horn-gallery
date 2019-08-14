@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    width: 100vw;
+    height: 150px;
+    background-color: rgba(253, 251, 124, 0.705);
+    align-items: center;
+    margin-bottom: 25px;
+}
+header h1 {
+    flex-grow: 1;
+    margin-left: 85px;
+    font-size: 3em;
+}
+header>img {
+    margin: 0 25px;
+    height: 100px;
+}

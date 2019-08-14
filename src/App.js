@@ -4,6 +4,7 @@ import Header from './Header.js';
 import AnimalList from './AnimalList.js';
 import images from './data/images.js';
 import FilterAnimals from './FilterAnimals.js';
+import AddImage from './AddImage.js';
 
 
 class App extends Component {
@@ -34,12 +35,23 @@ class App extends Component {
                 animalList.update(updateProps); 
             }
         };
+        const onAddProps = {
+            animals: images,
+            onAdd: (image) => {
+                images.push(image);
+            }
+        };
 
         const filterAnimals = new FilterAnimals(filterAnimalsProps);
         const filterAnimalsDOM = filterAnimals.renderDOM();
         const filterSection = dom.querySelector('#filter');
         filterSection.appendChild(filterAnimalsDOM);
 
+
+        const addImageForm = new AddImage(onAddProps);
+        const addImageFormDOM = addImageForm.renderDOM();
+        const addImageFormSection = dom.querySelector('#add-image-form');
+        addImageFormSection.appendChild(addImageFormDOM);
     }
 
 
@@ -50,6 +62,7 @@ class App extends Component {
                 <main>
                     <section id="filter" class="roboto"></section>
                     <section id="animal-list" class="roboto"></section>
+                    <section id="add-image-form" class="roboto"></section>
                 </main>
             </div>
         `;
