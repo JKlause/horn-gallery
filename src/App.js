@@ -2,7 +2,9 @@
 import Component from './Component.js';
 import Header from './Header.js';
 import AnimalList from './AnimalList.js';
-import image from './data/images.js';
+import images from './data/images.js';
+import FilterAnimals from './FilterAnimals.js';
+
 
 class App extends Component {
 
@@ -11,10 +13,33 @@ class App extends Component {
         const headerDom = header.renderDOM();
         dom.prepend(headerDom);
 
-        const props = { animal: image };
+        const props = { animal: images };
         const animalList = new AnimalList(props);
         const animalListDOM = animalList.renderDOM();
         dom.appendChild(animalListDOM);
+
+        const filterAnimalsProps = {
+            animals: images,
+            onFilter: (animalKeyword) => {
+                let filteredAnimals;
+                if(animalKeyword === 'all') {
+                    filteredAnimals = images;
+                }
+                else {
+                    filteredAnimals = images.filter(animal => {
+                        return animal.keyword === animalKeyword;
+                    });
+                }
+                const updateProps = { images: filteredAnimals };
+                animalList.update(updateProps);
+            }
+        };
+
+        const filterAnimals = new FilterAnimals(filterAnimalsProps);
+        const filterAnimalsDOM = filterAnimals.renderDOM();
+        const filterSection = dom.querySelector('#filter');
+        filterSection.appendChild(filterAnimalsDOM);
+
     }
 
 
