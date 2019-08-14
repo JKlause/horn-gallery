@@ -1,0 +1,13 @@
+#add-image-form {
+    height: 300px;
+    width: 80vw;
+    margin-top: 25px;
+    justify-content: left;
+    background-color: #ccc4b6;
+    display: block;
+    font-size: 1.2em;
+}
+#form {
+    display: flex;
+    flex-direction: column;
+}

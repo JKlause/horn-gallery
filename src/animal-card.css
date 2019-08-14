@@ -1,0 +1,27 @@
+#hornies {
+    height: 300px;
+    width: 250px;
+    background-color: rgba(132, 199, 115, 0.445);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    margin: 25px 12.5px 0 12.5px;
+}
+#hornies > div {
+    height: 30%;
+    margin: 0;
+    text-align: center;
+}
+h2 {
+    margin: 0;
+    line-height: 1;
+}
+h3 {
+    margin: 0;
+}
+#hornies>img {
+    height: 60%;
+    width: 100%;
+    object-fit: contain;
+}
